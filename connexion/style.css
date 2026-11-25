@@ -1,0 +1,166 @@
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --muted-text: #4b5563;
+    --primary-color: #0056b3;
+    --primary-hover: #004494;
+    --border-color: #6b7280;
+    --error-color: #b91c1c;
+    --error-bg: #fef2f2;
+    --focus-ring: #2563eb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.account-switch {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.account-switch a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.account-switch a:hover {
+    color: var(--primary-hover);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+label span {
+    color: var(--error-color);
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #fff;
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+
+/* Indicateur de focus clair pour la navigation au clavier */
+input:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* État d'erreur */
+input.input-error {
+    border-color: var(--error-color);
+    background-color: var(--error-bg);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    min-height: 1.25rem; /* Évite le saut de mise en page */
+}
+
+/* Conteneur pour le bouton Afficher/Masquer */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 5.5rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    text-decoration: underline;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 0.85rem;
+    margin-top: 0.5rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.home-link {
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}

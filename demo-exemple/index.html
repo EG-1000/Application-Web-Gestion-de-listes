@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Accessible - Fenêtre Modale de Suppression</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Démo : Suppression accessible</h1>
+        <p>Testez la navigation au clavier (<strong>Tab</strong>, <strong>Entrée</strong>, <strong>Échap</strong>) ou
+            avec un lecteur d'écran.</p>
+
+        <div class="demo-item" id="item-1">
+            <span>Liste : <strong>Épicerie</strong> (5 items)</span>
+            <button type="button" class="btn btn-danger btn-open-modal" data-item-id="item-1" data-item-name="Épicerie"
+                aria-label="Supprimer l'item Épicerie">
+                Supprimer
+            </button>
+        </div>
+
+        <div class="demo-item" id="item-2">
+            <span>Item : <strong>Dissertation sur Zarathoustra</strong></span>
+            <button type="button" class="btn btn-danger btn-open-modal" data-item-id="item-2"
+                data-item-name="Dissertation sur Zarathoustra"
+                aria-label="Supprimer l'item Dissertation sur Zarathoustra">
+                Supprimer
+            </button>
+        </div>
+
+        <!-- Zone live ARIA pour annoncer le résultat aux lecteurs d'écran -->
+        <div id="statusMessage" role="status" aria-live="polite"></div>
+    </div>
+
+    <!-- FENÊTRE MODALE ACCESSIBLE -->
+    <dialog id="confirmDialog" class="modal-confirm" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span aria-hidden="true" style="font-size: 1.5rem;">⚠️</span>
+                <h2 id="dialogTitle">Confirmer la suppression</h2>
+            </div>
+
+            <p id="dialogDesc" class="modal-body">
+                Êtes-vous sûr de vouloir supprimer cet élément ? Cette action est irréversible.
+            </p>
+
+            <div class="modal-footer">
+                <button type="button" id="cancelBtn" class="btn">Annuler</button>
+                <button type="button" id="confirmBtn" class="btn btn-danger">Supprimer définitivement</button>
+            </div>
+        </div>
+    </dialog>
+
+</body>
+
+</html>
